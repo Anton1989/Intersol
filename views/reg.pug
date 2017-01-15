@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    if error
+      .alert.alert-danger.alert-dismissible.fade.in(role="alert")
+        button(type="button", data-dismiss="alert", aria-label="Close").close
+          span(aria-hidden="true") ×
+        strong= error
+    form(action="/reg/", method="post")
+        .form-group
+            label Username:
+            input(type="text" name="username", required="required").form-control
+        .form-group
+            label Password:
+            input(type="password" name="password", required="required").form-control
+        input(type="submit", name="Sign Up", value="Sign Up").btn.btn-default

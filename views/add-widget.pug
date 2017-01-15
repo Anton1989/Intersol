@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	h1= title
+	form(action="/settings/"+widget._id+"/", method="post")
+		.form-group
+			label Название:
+			input(type="text" name="title", required="required", value="").form-control
+		.form-group
+			label Город:
+			select(name="city", required="required").form-control
+				each city, id in cities
+					option(value=id) #{city.name}
+		.form-group
+			label Прогноз на:
+			select(name="days", required="required").form-control.js-days
+				each day in days
+					option(value=day.num) #{day.label}
+		.form-group
+			label Код виджета:
+			textarea.form-control.js-code
+				if days[0].num == 1
+					iframe(src="http://146.185.143.61:1313/widget/"+widget._id+"/" width="212" height="80")
+				else if days[0].num == 3
+					iframe(src="http://146.185.143.61:1313/widget/"+widget._id+"/" width="550" height="112")
+				else
+					iframe(src="http://146.185.143.61:1313/widget/"+widget._id+"/" width="700" height="90")
+					 
+		input(type="submit", name="create", value="Сохранить").btn.btn-default

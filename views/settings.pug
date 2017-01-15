@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1= title
+	a(href="/settings/add/").btn.btn-default Создать
+	table.table.table-striped
+		thead
+			tr
+				th ИМЯ
+				th ГОРОД
+				th ДНЕЙ
+				th #
+		each item, index in widgets
+			tr
+				if item.title
+					td #{item.title}
+				else
+					td Без названия
+				td #{cities[item.city].name}
+				td #{item.days}
+				td
+					a(href="/settings/"+item._id+"/")
+						span.glyphicon.glyphicon-edit
+					a(href="/settings/delete/"+item._id+"/")
+						span.glyphicon.glyphicon-trash
+			

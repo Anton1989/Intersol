@@ -1,0 +1,10 @@
+extends layout-widget
+
+block content
+	.content
+		if widget.days == 1
+			include includes/widget.single.pug
+		else if widget.days == 3
+			include includes/widget.3.pug
+		else if widget.days == 7
+			include includes/widget.7.pug

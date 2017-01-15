@@ -1,0 +1,43 @@
+body {
+	margin: 0px;
+}
+.content {
+	float: left;
+	padding: 10px 20px;
+	background: #2b60ee;
+}
+.single {
+	float: left;
+    width: 168px;
+    height: 56px;
+}
+.tree {
+	float: left;
+	width: 506px;
+    height: 87px;
+}
+.tree .item {
+	float: left;
+	width: 33%;
+}
+.seven {
+	float: left;
+    width: 656px;
+    height: 66px;
+}
+.seven .item {
+	float: left;
+	width: 14.28%;
+}
+p {
+	color: #fff;
+	font-size: 11px;
+	margin: 0px;
+}
+p.strong {
+	font-size: 24px;
+	font-weight: bold;
+}
+.seven p.strong {
+	font-size: 20px;
+}

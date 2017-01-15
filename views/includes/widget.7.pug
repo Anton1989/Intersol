@@ -1,0 +1,6 @@
+.seven
+	each day, index in weather.daily
+		.item
+			p #{day.date}
+			p.strong #{day.temperatureMin} ... #{day.temperatureMax} C
+			p #{cities[widget.city].name}

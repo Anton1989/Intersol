@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1= title
+    if error
+      .alert.alert-danger.alert-dismissible.fade.in(role="alert")
+        button(type="button", data-dismiss="alert", aria-label="Close").close
+          span(aria-hidden="true") ×
+        strong= error
+    form(action="/", method="post")
+        .form-group
+            label Username:
+            input(type="text" name="username", required="required", value="anton").form-control
+        .form-group
+            label Password:
+            input(type="password" name="password", required="required", value="123456").form-control
+        input(type="submit", name="Log in", value="Log in").btn.btn-default
+    br    
+    iframe(src="http://146.185.143.61:1313/widget/587b9679c11bf61c3960d089/" width="550" height="112")
+    br
+    iframe(src="http://146.185.143.61:1313/widget/587b9690c11bf61c3960d08a/" width="700" height="90")
+    br
+    iframe(src="http://146.185.143.61:1313/widget/587b969cc11bf61c3960d08b/" width="212" height="80")
